@@ -22,7 +22,7 @@ RUN \
     libatk1.0-0 \
     libatk-bridge2.0-0 \
     libgtk-3-0 && \
-  echo "**** install altus studio from appimage ****" && \
+  echo "**** install rawtherapee from appimage ****" && \
   if [ -z ${RAWTHERAPEE_VERSION+x} ]; then \
     RAWTHERAPEE_VERSION=$(curl -sX GET "https://api.github.com/repos/beep6581/rawtherapee/releases/latest" \
     | awk '/tag_name/{print $4;exit}' FS='[""]'); \
