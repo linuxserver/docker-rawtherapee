@@ -26,3 +26,5 @@ repo_vars:
   - CI_DOCKERENV = ''
   - CI_AUTH = ''
   - CI_WEBPATH = ''
+sponsor_links:
+  - { name: "RawTherapee", url: "https://www.paypal.com/paypalme/rawtherapee" }
