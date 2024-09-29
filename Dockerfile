@@ -1,3 +1,5 @@
+# syntax=docker/dockerfile:1
+
 FROM ghcr.io/linuxserver/baseimage-kasmvnc:debianbookworm
 
 # set version label
@@ -38,6 +40,7 @@ RUN \
   cp \
     /opt/rawtherapee/usr/share/icons/hicolor/scalable/apps/rawtherapee.svg \
     /usr/share/icons/hicolor/scalable/apps/rawtherapee.svg && \
+  printf "Linuxserver.io version: ${VERSION}\nBuild-date: ${BUILD_DATE}" > /build_version && \
   echo "**** cleanup ****" && \
   apt-get autoclean && \
   rm -rf \
