@@ -6,6 +6,7 @@ project_url: "https://rawtherapee.com/"
 project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/rawtherapee-logo.png"
 project_blurb: "[RawTherapee]({{ project_url }}) is a free, cross-platform raw image processing program!"
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
+project_categories: "Image Editor"
 project_blurb_optional_extras_enabled: false
 # supported architectures
 available_architectures:
