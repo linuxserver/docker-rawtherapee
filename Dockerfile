@@ -10,7 +10,7 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 LABEL maintainer="aptalca"
 
 # title
-ENV TITLE=RawTherapee 
+ENV TITLE=RawTherapee
 
 RUN \
   echo "**** add icon ****" && \
@@ -26,13 +26,13 @@ RUN \
     libgtk-3-0 && \
   echo "**** install rawtherapee from appimage ****" && \
   if [ -z ${RAWTHERAPEE_VERSION+x} ]; then \
-    RAWTHERAPEE_VERSION=$(curl -sX GET "https://api.github.com/repos/beep6581/rawtherapee/releases/latest" \
+    RAWTHERAPEE_VERSION=$(curl -sX GET "https://api.github.com/repos/rawtherapee/rawtherapee/releases/latest" \
     | awk '/tag_name/{print $4;exit}' FS='[""]'); \
   fi && \
   cd /tmp && \
   curl -o \
     /tmp/rawtherapee.app -L \
-    "https://github.com/beep6581/rawtherapee/releases/download/${RAWTHERAPEE_VERSION}/RawTherapee_${RAWTHERAPEE_VERSION}_release.AppImage" && \
+    "https://github.com/rawtherapee/rawtherapee/releases/download/${RAWTHERAPEE_VERSION}/RawTherapee_${RAWTHERAPEE_VERSION}_release.AppImage" && \
   chmod +x /tmp/rawtherapee.app && \
   ./rawtherapee.app --appimage-extract && \
   mv squashfs-root /opt/rawtherapee && \
