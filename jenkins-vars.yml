@@ -7,7 +7,7 @@ release_type: stable
 release_tag: latest
 ls_branch: main
 repo_vars:
-  - EXT_USER = 'beep6581'
+  - EXT_USER = 'rawtherapee'
   - EXT_REPO = 'rawtherapee'
   - BUILD_VERSION_ARG = 'RAWTHERAPEE_VERSION'
   - LS_USER = 'linuxserver'
