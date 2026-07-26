@@ -11,6 +11,7 @@ project_blurb_optional_extras_enabled: false
 # supported architectures
 available_architectures:
   - {arch: "{{ arch_x86_64 }}", tag: "latest"}
+  - {arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
 # container parameters
 common_param_env_vars_enabled: true
 param_container_name: "{{ project_name }}"
@@ -103,6 +104,7 @@ init_diagram: |
   "rawtherapee:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "26.07.26:", desc: "Add aarch64 support."}
   - {date: "04.04.26:", desc: "Make Wayland default disable with PIXELFLUX_WAYLAND=false."}
   - {date: "28.12.25:", desc: "Add Wayland init logic."}
   - {date: "22.09.25:", desc: "Rebase to Debian Trixie."}

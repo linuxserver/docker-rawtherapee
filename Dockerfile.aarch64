@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM ghcr.io/linuxserver/baseimage-selkies:debiantrixie
+FROM ghcr.io/linuxserver/baseimage-selkies:arm64v8-debiantrixie
 
 # set version label
 ARG BUILD_DATE
@@ -34,7 +34,7 @@ RUN \
   cd /tmp && \
   curl -o \
     /tmp/rawtherapee.app -L \
-    "https://github.com/RawTherapee/RawTherapee/releases/download/${RAWTHERAPEE_VERSION}/RawTherapee_${RAWTHERAPEE_VERSION}_x86_64_release.AppImage" && \
+    "https://github.com/RawTherapee/RawTherapee/releases/download/${RAWTHERAPEE_VERSION}/RawTherapee_${RAWTHERAPEE_VERSION}_arm64_release.AppImage" && \
   chmod +x /tmp/rawtherapee.app && \
   ./rawtherapee.app --appimage-extract && \
   mv squashfs-root /opt/rawtherapee && \
