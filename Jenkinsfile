@@ -29,12 +29,13 @@ pipeline {
     DEV_DOCKERHUB_IMAGE = 'lsiodev/rawtherapee'
     PR_DOCKERHUB_IMAGE = 'lspipepr/rawtherapee'
     DIST_IMAGE = 'ubuntu'
-    MULTIARCH = 'false'
+    MULTIARCH = 'true'
     CI = 'true'
     CI_WEB = 'true'
     CI_PORT = '3001'
     CI_SSL = 'true'
     CI_DELAY = '120'
+    CI_WEB_SCREENSHOT_DELAY = '30'
     CI_DOCKERENV = ''
     CI_AUTH = ''
     CI_WEBPATH = ''
@@ -903,6 +904,7 @@ pipeline {
                 --shm-size=1gb \
                 -v /var/run/docker.sock:/var/run/docker.sock \
                 -e IMAGE=\"${IMAGE}\" \
+                -e WEB_SCREENSHOT_DELAY=\"${CI_WEB_SCREENSHOT_DELAY}\" \
                 -e DOCKER_LOGS_TIMEOUT=\"${CI_DELAY}\" \
                 -e TAGS=\"${CI_TAGS}\" \
                 -e META_TAG=\"${META_TAG}\" \
