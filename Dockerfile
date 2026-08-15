@@ -29,7 +29,7 @@ RUN \
   echo "**** install rawtherapee from appimage ****" && \
   if [ -z ${RAWTHERAPEE_VERSION+x} ]; then \
     RAWTHERAPEE_VERSION=$(curl -sX GET "https://api.github.com/repos/rawtherapee/rawtherapee/releases/latest" \
-    | awk '/tag_name/{print $4;exit}' FS='[""]'); \
+    | jq -r '.tag_name'); \
   fi && \
   cd /tmp && \
   curl -o \
